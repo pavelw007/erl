@@ -46,7 +46,7 @@ revlistT(List, Array ) ->
 
 %%
 %% another solution recursion
-%% no matter how to convert dec to bin, just  sum 1's
+%% during conversion from dec to bin just sum 1's 
 %% 
 bitsO(N) ->
     bitsOT(N,0).
@@ -66,6 +66,9 @@ bin2str(List) ->
 bin2strT([], Ret) -> 
     revlist(Ret);
 
+%% 
+%% change 1 to $1 an 0 to $0 ASCII code
+%%
 bin2strT(List, Ret) when is_list(List) ->
     X = case hd(List) of
         1 -> 49;
